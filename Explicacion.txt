@@ -1,0 +1,44 @@
+-import random
+Se importa para poder generar una elección aleatoria de la computadora.
+
+-jugador = input("Elige: piedra, papel o tijeras: ").lower()
+Se pide al usuario que escriba su jugada. .lower() convierte la entrada a minúsculas para evitar errores.
+
+-while jugador != "piedra" and jugador != "papel" and jugador != "tijeras":
+    print("Opción no válida.")
+    jugador = input("Elige: piedra, papel o tijeras: ").lower()
+Si el usuario escribe algo que no es, se repite la pregunta hasta que ingrese una opcion válida.
+
+-numero_aleatorio = random.randint(1, 3)
+Se genera un numero aleatorio entre 1 y 3.(import random)
+
+-if numero_aleatorio == 1:
+    computadora = "piedra"
+-elif numero_aleatorio == 2:
+    computadora = "papel"
+-elif numero_aleatorio == 3:
+    computadora = "tijeras"
+Los numeros son las reglas para la computadora.
+
+-print("La computadora eligio:", computadora)
+Se muestra en pantalla lo que eligió la maquina.
+
+-if jugador == computadora:
+    print("Empate")
+Si ambos eligen lo mismo, es empate.
+
+-elif (jugador == "piedra" and computadora == "tijeras") or \
+     (jugador == "papel" and computadora == "piedra") or \
+     (jugador == "tijeras" and computadora == "papel"):
+    print("Ganaste!")
+Estas son las combinaciones ganadoras del jugador.
+
+-else:
+    print("Perdiste.")
+Si no es empate ni victoria del jugador, entonces pierde.
+
+
+
+
+
+
